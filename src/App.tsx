@@ -1,13 +1,14 @@
 import 'sanitize.css';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme, GlobalStyle } from '@/style';
+import AppRouter from './routes/AppRouter';
 
 
 const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-
+      <AppRouter />
     </ThemeProvider>
   );
 };
