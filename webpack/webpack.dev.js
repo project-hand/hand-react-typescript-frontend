@@ -23,9 +23,5 @@ module.exports = {
   },
   plugins: [
     new ReactRefreshWebpackPlugin(),
-    new webpack.DefinePlugin({
-      // 'process.env.name': JSON.stringify('변수'), //env 변수 만들기
-      // 'process.env.KAKAO_SEARCH_REST_API_KEY': JSON.stringify('515db7fd242436c113cc739b997d8e46'),
-    }),
   ],
 };
