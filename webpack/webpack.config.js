@@ -5,7 +5,6 @@ const dotenv = require('dotenv');
 module.exports = (envVars) => {
   dotenv.config();
   const { env } = envVars;
-  console.log(env);
   const envConfig = require(`./webpack.${env}.js`);
   const config = merge(commonConfig, envConfig);
 
