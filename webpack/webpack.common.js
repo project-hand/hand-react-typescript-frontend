@@ -63,8 +63,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      // favicon: "src/assets/images/favicon_bbgg.ico",
+      favicon: "src/assets/images/hand-favicon.ico",
       template: path.resolve(__dirname, '..', './public/index.html'),
+    }),
+    new Dotenv({
+      path: '.env',
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({

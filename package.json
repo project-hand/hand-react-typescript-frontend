@@ -24,6 +24,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
+    "recoil": "^0.7.4",
     "sanitize.css": "^13.0.0",
     "speed-measure-webpack-plugin": "^1.5.0",
     "styled-components": "^5.3.5",
