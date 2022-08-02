@@ -1,7 +1,7 @@
 import 'sanitize.css';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme, GlobalStyle } from '@/style';
-import AppRouter from './routes/AppRouter';
+import AppRouter from './router';
 
 
 const App = () => {

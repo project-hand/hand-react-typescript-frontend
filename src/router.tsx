@@ -1,10 +1,10 @@
 // import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 // import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AuthRouter from '@/routes/AuthRouter';
-import HomePage from '@/pages/HomePage';
-import LoginPage from '@/pages/LoginPage';
-import NotFoundPage from '@/pages/NotFoundPage';
+import AuthRouter from '@/routes/Auth';
+import HomePage from '@/pages/Home/HomePage';
+import LoginPage from '@/pages/Auth/LoginPage';
+import NotFoundPage from '@/pages/NotFound/NotFoundPage';
 // import { useLogin } from '@/features/auth';
 // import { LoadingSpinner } from '@/components/LoadingSpinner';
 
