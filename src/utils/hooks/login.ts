@@ -11,7 +11,7 @@ export const useLogin = () => {
   const setUser = useSetRecoilState(userState);
 
   async function getAccessToken(): Promise<AxiosResponse> {
-    // await loginCheck();// access, refresh 갱신하는 api
+    await loginCheck();// access, refresh 갱신하는 api
     const user = await getCurrentUser(); // user 데이터 가져오는 api
     return user;
   }
