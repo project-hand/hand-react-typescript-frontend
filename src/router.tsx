@@ -3,8 +3,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AuthRouter from '@/routes/Auth';
 import HomePage from '@/pages/Home/HomePage';
-import LoginPage from '@/pages/Auth/LoginPage';
 import NotFoundPage from '@/pages/NotFound/NotFoundPage';
+import LandingPage from './pages/Landing/LandingPage';
+import { useLogin } from './utils/hooks/login';
 // import { useLogin } from '@/features/auth';
 // import { LoadingSpinner } from '@/components/LoadingSpinner';
 
@@ -17,6 +18,8 @@ import NotFoundPage from '@/pages/NotFound/NotFoundPage';
 // const LoginPage = lazy(() => import('@/pages/LoginPage'));
 
 const AppRouter = () => {
+  const { isLoading } = useLogin();
+  if (!isLoading) return <div></div>;
   return (
     // <Suspense fallback={<LoadingSpinner />}>
     <Router>
@@ -29,8 +32,9 @@ const AppRouter = () => {
             </AuthRouter>
           }
         />
+        <Route path="/landing" element={
+          <LandingPage />} />
         <Route path="*" element={<NotFoundPage />} />
-        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Router>
   );
