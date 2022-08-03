@@ -1,51 +1,78 @@
 import styled from 'styled-components';
+
 const StyledContainer = styled.div`
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
   z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  animation-name: modal-show-op;
-  animation-duration: 0.5s;
-  @keyframes modal-show-op {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 `;
-const StyledModal = styled.div`
+const StyledModalBlock = styled.div`
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    padding: 1.8rem;
+    background-color: white;
+    width: 30rem;
+    @media (max-width: 1120px) {
+        width: 20rem;
+    }
+    @media (max-width: 20rem) {
+        width: 40%;
+    }
+    min-height: 10rem;
+    animation: modal-show 1s;
+    @keyframes modal-show {
+        from {
+            opacity: 0;
+            margin-top: -50px;
+        }
+        to {
+            opacity: 1;
+            margin-top: 0;
+        }
+    }
+`;
+
+const StyledModalContents = styled.div`
   display: flex;
-  justify-items: center;
+  flex-direction: column;
   align-items: center;
-  position: relative;
-  background-color: white;
-  border-radius: 10px;
 `;
 
 const StyledClose = styled.div`
   position: absolute;
-  z-index: 101;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 7rem;
+  right: 1.5rem;
+  top: 1.5rem;
+  width: 10px;
+  height: 10px;
+  background-color: white;
   cursor: pointer;
 `;
 
 const StyledBackground = styled.div`
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.15);
+    backdrop-filter: blur(5px);
+    animation: modal-bg-show 1s;
+    @keyframes modal-bg-show {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
 `;
 
-export { StyledContainer, StyledModal, StyledClose, StyledBackground };
+export { StyledContainer, StyledModalBlock, StyledClose, StyledBackground, StyledModalContents };
