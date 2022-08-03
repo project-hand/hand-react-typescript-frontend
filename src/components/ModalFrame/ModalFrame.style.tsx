@@ -21,7 +21,7 @@ const StyledModalBlock = styled.div`
   border-radius: 20px;
   padding: 1.8rem;
   background-color: white;
-  width: 200px;
+  width: 250px;
   height: 300px;
   animation: modal-show 1s;
 

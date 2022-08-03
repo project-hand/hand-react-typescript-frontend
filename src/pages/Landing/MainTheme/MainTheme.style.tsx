@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const ThemeBox = styled.div`
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   position: relative;
 
   @media only screen and (min-width: 768px) {
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
   }
 
   @media only screen and (min-width: 1024px) {

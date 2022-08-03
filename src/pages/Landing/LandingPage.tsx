@@ -2,7 +2,10 @@ import Button from "@/components/Button/Button";
 import ModalFrame from "@/components/ModalFrame/ModalFrame";
 import { useToggleModal } from "@/utils/hooks";
 import { MainWrapper } from "./LandingPage.style";
+import LoginButton from "./Login/LoginButton";
 import LoginForm from "./Login/LoginForm";
+import LoginLogo from "./Login/LoginLogo";
+import LoginTitle from "./Login/LoginTitle";
 import MainTheme from "./MainTheme/MainTheme";
 
 const LandingPage = () => {
@@ -20,7 +23,9 @@ const LandingPage = () => {
       </Button>
       <ModalFrame handleModal={toggleModal} state={stateModal} >
         <LoginForm>
-
+          <LoginLogo />
+          <LoginTitle />
+          <LoginButton />
         </LoginForm>
       </ModalFrame>
     </MainWrapper>
