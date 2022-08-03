@@ -15,31 +15,36 @@ const StyledContainer = styled.div`
 `;
 const StyledModalBlock = styled.div`
   position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    padding: 1.8rem;
-    background-color: white;
-    width: 30rem;
-    @media (max-width: 1120px) {
-        width: 20rem;
-    }
-    @media (max-width: 20rem) {
-        width: 40%;
-    }
-    min-height: 10rem;
-    animation: modal-show 1s;
-    @keyframes modal-show {
-        from {
-            opacity: 0;
-            margin-top: -50px;
-        }
-        to {
-            opacity: 1;
-            margin-top: 0;
-        }
-    }
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  padding: 1.8rem;
+  background-color: white;
+  width: 200px;
+  height: 300px;
+  animation: modal-show 1s;
+
+  @media only screen and (min-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    width: 400px;
+    height: 400px;
+  }
+
+  @keyframes modal-show {
+      from {
+          opacity: 0;
+          margin-top: -50px;
+      }
+      to {
+          opacity: 1;
+          margin-top: 0;
+      }
+  }
 `;
 
 const StyledModalContents = styled.div`
