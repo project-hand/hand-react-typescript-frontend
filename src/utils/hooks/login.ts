@@ -1,9 +1,7 @@
 import { userState } from '@/store/user';
-import { UserStateProps } from '@/types/user';
 import { useState, useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
-import { getCurrentUser, loginCheck } from '@/api/Auth';
-import { axios } from '@/lib';
+import { getCurrentUser, loginCheck } from '@/api';
 import { AxiosResponse } from 'axios';
 
 export const useLogin = () => {

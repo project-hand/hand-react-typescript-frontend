@@ -8,6 +8,9 @@ export async function getCurrentUser() {
 }
 
 export async function loginCheck() {
-  const result = await axios.get<never, void>('/api/loginCheck');
-  return result;
+  await axios.get<never, void>('/api/loginCheck');
+}
+
+export async function logOut() {
+  await axios.get('/api/logout');
 }
