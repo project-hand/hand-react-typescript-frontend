@@ -96,11 +96,10 @@ const StyledTitle = styled.div`
   opacity: 0;
   position: absolute;
   left: 0;
-  top: 30%;
-  width: 100%;
-  line-height: 300px;
+  bottom: 0;
+  width: 100%;  
   text-align: center;
-  transform: translate3d(0, 0, 0);
+  line-height: 100px;
   color: black;
   text-transform: uppercase;
   font-weight: 500;
@@ -122,12 +121,14 @@ const StyledTitle = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
+    line-height: 200px;
     letter-spacing: .1em;
-    font-size: 46px;
+    font-size: 38px;
     top: 50%;
   }
 
   @media only screen and (min-width: 1024px) {
+    line-height: 300px;
     letter-spacing: .15em;
     font-size: 54px;
     top: 50%;
