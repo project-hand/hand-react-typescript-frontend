@@ -1,53 +1,32 @@
-import styled from "styled-components";
-import MainTheme from "./MainTheme";
+import Button from "@/components/Button/Button";
+import ModalFrame from "@/components/ModalFrame/ModalFrame";
+import { useToggleModal } from "@/utils/hooks";
+import { MainWrapper } from "./LandingPage.style";
+import LoginForm from "./Login/LoginForm";
+import MainTheme from "./MainTheme/MainTheme";
 
 const LandingPage = () => {
+  const { toggleModal, stateModal } = useToggleModal();
+
+  const onLogin = () => {
+
+  };
+
   return (
     <MainWrapper>
       <MainTheme />
-      <Button />
+      <Button disabled={false} size={'xxlg'} variant={'success'} onClickHandler={toggleModal} >
+        시작하기
+      </Button>
+      <ModalFrame handleModal={toggleModal} state={stateModal} >
+        <LoginForm>
+
+        </LoginForm>
+      </ModalFrame>
     </MainWrapper>
   );
 };
 
-const MainWrapper = styled.div`
-  height: 100vh;
-  background: #eee;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-`;
 
-const Button = styled.button`
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 800ms;
-  border: none;
-  border-radius: 45px;
-  padding: 15px 25px;
-  font-size: 30px;
-  background-color: white;
-  cursor: pointer;
-
-  &::after{
-    content: '시작하기';
-  }
-
-  &:hover{
-    background-color: #15b1ff;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  }
-
-  @keyframes showBtn {
-    from{
-      opacity: 0.9;
-    filter: alpha(opacity=90);
-    }
-  }
-`;
 
 export default LandingPage;

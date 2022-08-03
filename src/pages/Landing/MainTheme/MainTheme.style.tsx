@@ -1,17 +1,5 @@
 import styled from "styled-components";
 
-const MainTheme = () => {
-  return (
-    <ThemeBox>
-      <StyledCalBox></StyledCalBox>
-      <StyledMemBox></StyledMemBox>
-      <StyledTodBox></StyledTodBox>
-      <StyledTitle></StyledTitle>
-      <StyledShortTitle></StyledShortTitle>
-    </ThemeBox>
-  );
-};
-
 const ThemeBox = styled.div`
   width: 250px;
   height: 250px;
@@ -173,4 +161,4 @@ const StyledShortTitle = styled(StyledTitle)`
   }
 `;
 
-export default MainTheme;
+export { ThemeBox, StyledCalBox, StyledMemBox, StyledShortTitle, StyledTitle, StyledTodBox };
