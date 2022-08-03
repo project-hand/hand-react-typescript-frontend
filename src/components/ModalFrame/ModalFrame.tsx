@@ -6,6 +6,7 @@ import {
   StyledModalBlock,
   StyledModalContents
 } from "./ModalFrame.style";
+import { AiFillCloseCircle } from '@react-icons/all-files/ai/AiFillCloseCircle';
 
 const ModalFrame = ({ handleModal, state, children, }: ModalFrameProps) => {
   return state ? (
@@ -16,7 +17,7 @@ const ModalFrame = ({ handleModal, state, children, }: ModalFrameProps) => {
           {children}
         </StyledModalContents>
         <StyledClose onClick={(e) => handleModal(e)}>
-          X
+          <AiFillCloseCircle />
         </StyledClose>
       </StyledModalBlock>
     </StyledContainer>
