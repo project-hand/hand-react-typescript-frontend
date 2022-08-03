@@ -5,7 +5,7 @@ import AuthRouter from '@/routes/Auth';
 import HomePage from '@/pages/Home/HomePage';
 import NotFoundPage from '@/pages/NotFound/NotFoundPage';
 import LandingPage from './pages/Landing/LandingPage';
-import { useLogin } from './utils/hooks/login';
+import { useLogin } from './utils/hooks';
 // import { useLogin } from '@/features/auth';
 // import { LoadingSpinner } from '@/components/LoadingSpinner';
 
