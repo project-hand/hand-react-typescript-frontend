@@ -4,8 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AuthRouter from '@/routes/Auth';
 import HomePage from '@/pages/Home/HomePage';
 import NotFoundPage from '@/pages/NotFound/NotFoundPage';
-import LandingPage from './pages/Landing/LandingPage';
-import { useLogin } from './utils/hooks';
+import LandingPage from '@/pages/Landing/LandingPage';
+import { useLogin } from '@/utils/hooks';
+import ProfilePage from '@/pages/Profile/ProfilePage';
+import SettingPage from '@/pages/Setting/SettingPage';
 // import { useLogin } from '@/features/auth';
 // import { LoadingSpinner } from '@/components/LoadingSpinner';
 
@@ -29,6 +31,22 @@ const AppRouter = () => {
           element={
             <AuthRouter>
               <HomePage />
+            </AuthRouter>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <AuthRouter>
+              <ProfilePage />
+            </AuthRouter>
+          }
+        />
+        <Route
+          path="/setting"
+          element={
+            <AuthRouter>
+              <SettingPage />
             </AuthRouter>
           }
         />
