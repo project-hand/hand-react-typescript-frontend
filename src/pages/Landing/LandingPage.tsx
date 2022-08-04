@@ -11,10 +11,6 @@ import MainTheme from "./MainTheme/MainTheme";
 const LandingPage = () => {
   const { toggleModal, stateModal } = useToggleModal();
 
-  const onLogin = () => {
-
-  };
-
   return (
     <MainWrapper>
       <MainTheme />
