@@ -15,10 +15,18 @@ const HeaderNav = ({ onToggleSearch }) => {
 
   return (
     <StyledHeaderNav>
-      <StyledNavItem><BiSearchAlt2 onClick={onToggleSearch} /></StyledNavItem>
-      <StyledLink to="/"><HiOutlineHome /></StyledLink>
-      <StyledLink to="/profile"><FaRegUserCircle /></StyledLink>
-      <StyledNavItem><RiLogoutBoxRLine onClick={() => onLogout()} /></StyledNavItem>
+      <StyledNavItem>
+        <BiSearchAlt2 onClick={onToggleSearch} />
+      </StyledNavItem>
+      <StyledLink to="/">
+        <HiOutlineHome />
+      </StyledLink>
+      <StyledLink to="/profile">
+        <FaRegUserCircle />
+      </StyledLink>
+      <StyledNavItem>
+        <RiLogoutBoxRLine onClick={() => onLogout()} />
+      </StyledNavItem>
     </StyledHeaderNav>
   );
 };

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-const HeaderSearchInput = () => {
+const HeaderSearchInput = ({ inputValue, onChangeSearch }) => {
+
   return (
-    <StyledSearchInput />
+    <StyledSearchInput onChange={(e) => onChangeSearch(e)} value={inputValue} autoFocus />
   );
 };
 
