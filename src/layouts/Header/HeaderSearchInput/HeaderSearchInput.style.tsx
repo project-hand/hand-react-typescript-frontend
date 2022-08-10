@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-const HeaderSearchInput = ({ inputValue, onChangeSearch }) => {
-  return (
-    <StyledSearchInput onChange={(e) => onChangeSearch(e)} value={inputValue} autoFocus />
-  );
-};
-
 const StyledSearchInput = styled.input.attrs({
   placeholder: "Search contents.."
 })`
@@ -15,8 +9,6 @@ const StyledSearchInput = styled.input.attrs({
   &:focus{
     outline: none;
   }
-
-  
 `;
 
-export default HeaderSearchInput;
+export { StyledSearchInput };

@@ -1,13 +1,5 @@
 import styled from "styled-components";
 
-const SearchList = ({ search }) => {
-  return (
-    <StyledSearchList>
-      {search.result}
-    </StyledSearchList>
-  );
-};
-
 const StyledSearchList = styled.a`
   cursor: pointer;
   padding: 5px 5px 5px 20px;
@@ -18,7 +10,7 @@ const StyledSearchList = styled.a`
   &:hover{
     color: #0aadfe;
     background-color: #f0f0f0da;
-  }
+  } 
 `;
 
-export default SearchList;
+export { StyledSearchList };

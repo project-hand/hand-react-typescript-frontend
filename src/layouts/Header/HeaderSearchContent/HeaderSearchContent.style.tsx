@@ -1,17 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import SearchList from "./SearchList";
-
-const HearderSearchContent = ({ searchList }) => {
-  return (
-    <StyledSearchContent>
-      {searchList.map((search, index) => {
-        return (
-          <SearchList key={index} search={search} />
-        );
-      })}
-    </StyledSearchContent>
-  );
-};
 
 const showContents = keyframes`
   from{
@@ -43,4 +30,4 @@ const StyledSearchContent = styled.div`
   animation-fill-mode: forwards;
 `;
 
-export default HearderSearchContent;
+export { StyledSearchContent };
