@@ -4,6 +4,7 @@ import HeaderSearchInput from "./HeaderSearchInput";
 import { BiSearchAlt2 } from "@react-icons/all-files/bi/BiSearchAlt2";
 import { useState } from "react";
 import HearderSearchContent from "./HearderSearchContent";
+import { SearchVisibleProps } from "@/types/headerStyle";
 
 const defaultSearchList = [
   {
@@ -63,7 +64,7 @@ const fadeOut = keyframes`
   }
 `;
 
-const StyledSearchContainer = styled.form<{ visible: boolean; }>`
+const StyledSearchContainer = styled.form<SearchVisibleProps>`
   position: relative;
   width: 40%;
   display: flex;

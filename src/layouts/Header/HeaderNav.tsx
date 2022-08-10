@@ -1,12 +1,13 @@
 import { useLogout } from "@/utils/hooks";
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { HiOutlineHome } from "@react-icons/all-files/hi/HiOutlineHome";
 import { FaRegUserCircle } from "@react-icons/all-files/fa/FaRegUserCircle";
 import { RiLogoutBoxRLine } from "@react-icons/all-files/ri/RiLogoutBoxRLine";
 import { BiSearchAlt2 } from "@react-icons/all-files/bi/BiSearchAlt2";
+import { HeaderVisibleProps } from "@/types/headerStyle";
 
-const HeaderNav = ({ onToggleSearch }) => {
+const HeaderNav = ({ onToggleSearch, visible, render }) => {
   const { logout } = useLogout();
 
   const onLogout = async () => {
@@ -15,22 +16,40 @@ const HeaderNav = ({ onToggleSearch }) => {
 
   return (
     <StyledHeaderNav>
-      <StyledNavItem>
+      <StyledSearch visible={visible} render={render}>
         <BiSearchAlt2 onClick={onToggleSearch} />
-      </StyledNavItem>
-      <StyledLink to="/">
+      </StyledSearch>
+      <StyledHome to="/" visible={visible} render={render}>
         <HiOutlineHome />
-      </StyledLink>
-      <StyledLink to="/profile">
+      </StyledHome>
+      <StyledProfile to="/profile" visible={visible} render={render}>
         <FaRegUserCircle />
-      </StyledLink>
-      <StyledNavItem>
+      </StyledProfile>
+      <StyledLogOut visible={visible} render={render}>
         <RiLogoutBoxRLine onClick={() => onLogout()} />
-      </StyledNavItem>
+      </StyledLogOut>
     </StyledHeaderNav>
   );
 };
 
+
+const slideIn = keyframes`
+  from{
+    transform: translateX(400px);
+  }
+  to{
+    transform: translateX(0);
+  }
+`;
+
+const slideOut = keyframes`
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(400px);
+  }
+`;
 
 const StyledHeaderNav = styled.div`
   display: flex;
@@ -39,7 +58,7 @@ const StyledHeaderNav = styled.div`
   gap: 35px;
 `;
 
-const StyledLink = styled(NavLink)`
+const StyledLink = styled(NavLink) <HeaderVisibleProps>`
   font-size: 2.5rem;
   color: #525252;
   &:visited{
@@ -51,7 +70,7 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
-const StyledNavItem = styled.button`
+const StyledNavItem = styled.button<HeaderVisibleProps>`
   font-size: 2.5rem;
   color: #525252;
   &:visited{
@@ -66,6 +85,53 @@ const StyledNavItem = styled.button`
   margin: 0;
   cursor: pointer;  
   background-color: transparent;
+`;
+
+const StyledSearch = styled(StyledNavItem)`
+  animation-timing-function: ease-out;
+  ${props => props.render && props.visible && css`
+    animation-duration: 350ms;
+    animation-name: ${slideIn};
+  `}
+`;
+
+const StyledHome = styled(StyledLink)`
+  animation-timing-function: ease-out;
+  ${props => props.render && props.visible && css`
+    animation-duration: 450ms;
+    animation-name: ${slideIn};
+  `}
+
+  ${props => !props.visible && css`
+    animation-duration: 250ms;
+    animation-name: ${slideOut};
+  `}
+`;
+
+const StyledProfile = styled(StyledLink)`
+  animation-timing-function: ease-out;
+  ${props => props.render && props.visible && css`
+    animation-duration: 550ms;
+    animation-name: ${slideIn};
+  `}
+
+  ${props => !props.visible && css`
+    animation-duration: 350ms;
+    animation-name: ${slideOut};
+  `}
+`;
+
+const StyledLogOut = styled(StyledNavItem)`
+  animation-timing-function: ease-out;
+  ${props => props.render && props.visible && css`
+    animation-duration: 650ms;
+    animation-name: ${slideIn};
+  `}
+
+  ${props => !props.visible && css`
+    animation-duration: 450ms;
+    animation-name: ${slideOut};
+  `}
 `;
 
 export default HeaderNav;

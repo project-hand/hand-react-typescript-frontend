@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled, { css, keyframes } from "styled-components";
+import styled from "styled-components";
 import HeaderLogo from "./HeaderLogo";
 import HeaderNav from "./HeaderNav";
 import HeaderSearch from "./HeaderSearch";
@@ -19,32 +19,14 @@ const Header = () => {
     <StyledHeader>
       {searchState ?
         <HeaderSearch onToggleSearch={onToggleSearch} visible={localVisible} /> :
-        <StyledHeaderMain visible={localVisible} render={renderVisible}>
-          <HeaderLogo />
-          <HeaderNav onToggleSearch={onToggleSearch} />
+        <StyledHeaderMain >
+          <HeaderLogo visible={localVisible} render={renderVisible} />
+          <HeaderNav visible={localVisible} render={renderVisible} onToggleSearch={onToggleSearch} />
         </StyledHeaderMain>
       }
     </StyledHeader>
   );
 };
-
-const fadeIn = keyframes`
-  from{
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
-`;
-
-const fadeOut = keyframes`
-  from{
-    opacity: 1;
-  }
-  to{
-    opacity: 0;
-  }
-`;
 
 const StyledHeader = styled.div`
   display: flex;
@@ -56,24 +38,12 @@ const StyledHeader = styled.div`
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 `;
 
-const StyledHeaderMain = styled.div<{ visible: boolean; render: boolean; }>`
+const StyledHeaderMain = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
   height: 100%;
-
-  animation-duration: 250ms;
-  animation-timing-function: ease-out;
-  
-  ${props => props.render && props.visible && css`
-    animation-name: ${fadeIn};
-  `}
-
-  ${props => !props.visible && css`
-    animation-name: ${fadeOut};
-  `}
-  
 `;
 
 export default Header;
