@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-size: 1.6rem;
     background-color:  white;
-    font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     color: #3d3d3d;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -34,26 +34,26 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   button {
-    font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   input {
-    font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   textarea {
-    font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
-  input::-webkit-input-placeholder { font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif; }
-  input::-moz-placeholder { font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif; }
-  input:-ms-input-placeholder { font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif; }
-  input:-moz-placeholder { font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif; }
-  input::placeholder { font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif; }
+  input::-webkit-input-placeholder { font-family: 'Noto Sans KR', sans-serif; }
+  input::-moz-placeholder { font-family: 'Noto Sans KR', sans-serif; }
+  input:-ms-input-placeholder { font-family: 'Noto Sans KR', sans-serif; }
+  input:-moz-placeholder { font-family: 'Noto Sans KR', sans-serif; }
+  input::placeholder { font-family: 'Noto Sans KR', sans-serif; }
 
-  textarea::-webkit-input-placeholder { font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif; }
-  textarea::-moz-placeholder { font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif; }
-  textarea:-ms-input-placeholder { font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif; }
-  textarea:-moz-placeholder { font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif; }
-  textarea::placeholder { font-family: 'Roboto', 'Noto Sans KR', arial, sans-serif; }
+  textarea::-webkit-input-placeholder { font-family: 'Noto Sans KR', sans-serif; }
+  textarea::-moz-placeholder { font-family: 'Noto Sans KR', sans-serif; }
+  textarea:-ms-input-placeholder { font-family: 'Noto Sans KR', sans-serif; }
+  textarea:-moz-placeholder { font-family: 'Noto Sans KR', sans-serif; }
+  textarea::placeholder { font-family: 'Noto Sans KR', sans-serif; }
 `;
