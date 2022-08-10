@@ -10,7 +10,7 @@ import Main from './layouts/Main/Main';
 const HomePage = lazy(() => import('@/pages/Home/HomePage'));
 const LandingPage = lazy(() => import('@/pages/Landing/LandingPage'));
 const ProfilePage = lazy(() => import('@/pages/Profile/ProfilePage'));
-const SettingPage = lazy(() => import('@/pages/Setting/SettingPage'));
+const TermsPage = lazy(() => import('@/pages/Terms/TermsPage'));
 
 const AppRouter = () => {
   const { isLoading } = useLogin();
@@ -37,10 +37,10 @@ const AppRouter = () => {
               }
             />
             <Route
-              path="/setting"
+              path="/terms"
               element={
                 <AuthRouter>
-                  <SettingPage />
+                  <TermsPage />
                 </AuthRouter>
               }
             />

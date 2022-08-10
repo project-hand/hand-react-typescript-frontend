@@ -7,7 +7,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div>HOzzME!</div>
+      <div>main home!</div>
     </>
   );
 };
