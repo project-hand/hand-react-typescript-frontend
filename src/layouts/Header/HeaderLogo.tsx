@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const HeaderLogo = () => {
   return (
     <StyledLogo to="/">
-      <img src={Logo} alt="HAND Logo" />
+      <StyledLogoImg src={Logo} alt="HAND Logo" />
       <StyledTitle>HAND</StyledTitle>
     </StyledLogo>
   );
@@ -22,8 +22,13 @@ const StyledLogo = styled(NavLink)`
   }
 `;
 
+const StyledLogoImg = styled.img`
+  width: 40px;
+  height: auto;
+`;
+
 const StyledTitle = styled.span`
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   font-weight: 500;
 `;
 
