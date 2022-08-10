@@ -16,7 +16,6 @@ const Main = ({ children }) => {
 };
 
 const StyledMainContainer = styled.div`
-  display: flex;
   width: 100%;
   height: 100vh;
   background-color: white;
