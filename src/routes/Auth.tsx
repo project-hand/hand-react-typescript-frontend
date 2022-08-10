@@ -12,9 +12,9 @@ const AuthRouter = ({ children }: RequireAuthProps) => {
 
   if (user?.refreshToken) {
     return (
-      <Main>
+      <>
         {children}
-      </Main>
+      </>
     );
   } else {
     return <Navigate to="/landing" />;

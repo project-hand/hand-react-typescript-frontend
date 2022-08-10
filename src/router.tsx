@@ -5,19 +5,25 @@ import AuthRouter from '@/routes/Auth';
 import NotFoundPage from '@/pages/NotFound/NotFoundPage';
 import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner';
 import { useLogin } from '@/utils/hooks';
+import Main from './layouts/Main/Main';
+import HomePage from './pages/Home/HomePage';
+import ProfilePage from './pages/Profile/ProfilePage';
+import SettingPage from './pages/Setting/SettingPage';
+import LandingPage from './pages/Landing/LandingPage';
 
-const HomePage = lazy(() => import('@/pages/Home/HomePage'));
-const LandingPage = lazy(() => import('@/pages/Landing/LandingPage'));
-const ProfilePage = lazy(() => import('@/pages/Profile/ProfilePage'));
-const SettingPage = lazy(() => import('@/pages/Setting/SettingPage'));
+// const HomePage = lazy(() => import('@/pages/Home/HomePage'));
+// const LandingPage = lazy(() => import('@/pages/Landing/LandingPage'));
+// const ProfilePage = lazy(() => import('@/pages/Profile/ProfilePage'));
+// const SettingPage = lazy(() => import('@/pages/Setting/SettingPage'));
 
 const AppRouter = () => {
   const { isLoading } = useLogin();
   if (!isLoading) return <div></div>;
   return (
-    <Suspense fallback={<LoadingSpinner />}>
-      <Router>
-        <Routes>
+    // <Suspense fallback={<LoadingSpinner />}>
+    <Router>
+      <Routes>
+        <Route element={<Main />}>
           <Route
             path="/"
             element={
@@ -42,12 +48,13 @@ const AppRouter = () => {
               </AuthRouter>
             }
           />
-          <Route path="/landing" element={
-            <LandingPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Router>
-    </Suspense>
+        </Route>
+        <Route path="/landing" element={
+          <LandingPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Router>
+    // </Suspense>
   );
 };
 
