@@ -4,6 +4,7 @@ import styled from "styled-components";
 const StyledSidebar = styled.div<SidebarStyleProps>`
 position: fixed;
 right: 0;
+bottom: 15%;
 display: flex;
 height: 500px;
 width: 140px;
