@@ -1,5 +1,5 @@
 import Button from "@/components/Button/Button";
-import ModalFrame from "@/components/ModalFrame/ModalFrame";
+import ModalFrame from "@/layouts/ModalFrame/ModalFrame";
 import { useToggleModal } from "@/utils/hooks";
 import { MainWrapper } from "./LandingPage.style";
 import LoginButton from "./Login/LoginButton";
