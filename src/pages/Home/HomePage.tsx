@@ -1,3 +1,8 @@
+import Card from "@/components/Card/Card";
+import CardCalendar from "@/components/Card/CardCalendar/CardCalendar";
+import CardCustom from "@/components/Card/CardCustom/CardCustom";
+import CardMemo from "@/components/Card/CardMemo/CardMemo";
+import CardTodoList from "@/components/Card/CardTodoList/CardTodoList";
 import Sidebar from "@/layouts/Sidebar/Sidebar";
 import { userState } from "@/store/user";
 import { useToggleSidebar } from "@/utils/hooks/toggleSidebar";
@@ -58,6 +63,18 @@ const HomePage = () => {
       {stateMode === SERV_MODE.MAIN
         ?
         <StyledModeSelectContainer>
+          <Card>
+            <CardCalendar />
+          </Card>
+          <Card>
+            <CardMemo />
+          </Card>
+          <Card>
+            <CardTodoList />
+          </Card>
+          <Card>
+            <CardCustom />
+          </Card>
         </StyledModeSelectContainer>
         :
         <DndProvider backend={HTML5Backend}>
@@ -88,7 +105,8 @@ const StyledHome = styled.div`
 
 const StyledModeSelectContainer = styled.div`
   display: flex;
-  justify-content: center;
+  width:100%;
+  justify-content: space-around;
   align-items: center;
 `;
 
