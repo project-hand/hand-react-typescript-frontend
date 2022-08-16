@@ -1,4 +1,4 @@
-import { ModalFrameProps } from "@/types/ModalFrame";
+import { ModalFrameProps } from "@/types/modalFrame";
 import {
   StyledBackground,
   StyledClose,
