@@ -1,53 +1,28 @@
 import Sidebar from "@/layouts/Sidebar/Sidebar";
+import { itemAtom } from "@/store/item";
 import { useToggleSidebar } from "@/utils/hooks/toggleSidebar";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
-
-const mock = {
-  usingItem: [
-    {
-      index: 1,
-      name: 'calendar',
-    },
-    {
-      index: 2,
-      name: 'memo'
-    },
-    {
-      index: 3,
-      name: 'todo'
-    }
-  ],
-  sidebarItem: [
-    {
-      index: 1,
-      name: 'test'
-    },
-    {
-      index: 2,
-      name: 'test2'
-    },
-    {
-      index: 3,
-      name: 'weather'
-    }
-  ]
-};
 
 const CustomPage = () => {
   const { toggleSidebar, stateSidebar, xPosition } = useToggleSidebar();
+  const [itemState, setItemState] = useRecoilState(itemAtom);
+
+  console.log(itemState);
+
 
   return (
     <DndProvider backend={HTML5Backend}>
       <StyledItemContainer>
-        {mock.usingItem.map(({ name }) => {
-          return <StyledUsingItem>{name}</StyledUsingItem>;
+        {itemState.usingItem.map(({ item }) => {
+          return <StyledUsingItem>{item}</StyledUsingItem>;
         })}
       </StyledItemContainer>
       <Sidebar handleSidbar={toggleSidebar} state={stateSidebar} xPosition={xPosition} >
-        {mock.sidebarItem.map(({ name }) => {
-          return <StyledSidebarItem>{name}</StyledSidebarItem>;
+        {itemState.sidebarItem.map(({ item }) => {
+          return <StyledSidebarItem>{item}</StyledSidebarItem>;
         })}
       </Sidebar>
     </DndProvider>

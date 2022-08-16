@@ -10,10 +10,7 @@ import styled from "styled-components";
 
 const HomePage = () => {
   const user = useRecoilValue(userState);
-
   console.log(user);
-
-
   return (
     <StyledHome>
       <StyledHome>
