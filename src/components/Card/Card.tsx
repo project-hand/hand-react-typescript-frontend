@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const Card = ({ children }) => {
+const Card = ({ children, handleMode }) => {
   return (
-    <StyledCardContainer>
+    <StyledCardContainer onClick={handleMode}>
       {children}
     </StyledCardContainer>
   );

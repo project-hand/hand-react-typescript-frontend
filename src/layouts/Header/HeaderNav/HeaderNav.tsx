@@ -4,9 +4,12 @@ import { HiOutlineHome } from "@react-icons/all-files/hi/HiOutlineHome";
 import { FaRegUserCircle } from "@react-icons/all-files/fa/FaRegUserCircle";
 import { RiLogoutBoxRLine } from "@react-icons/all-files/ri/RiLogoutBoxRLine";
 import { BiSearchAlt2 } from "@react-icons/all-files/bi/BiSearchAlt2";
+import { useSetRecoilState } from "recoil";
+import { modeState, SERV_MODE } from "@/store/mode";
 
 const HeaderNav = ({ onToggleSearch, visible, render }) => {
   const { logout } = useLogout();
+  const setMode = useSetRecoilState(modeState);
 
   const onLogout = async () => {
     await logout();
@@ -17,7 +20,7 @@ const HeaderNav = ({ onToggleSearch, visible, render }) => {
       <StyledSearch visible={visible} render={render}>
         <BiSearchAlt2 onClick={onToggleSearch} />
       </StyledSearch>
-      <StyledHome to="/" visible={visible} render={render}>
+      <StyledHome onClick={() => setMode(SERV_MODE.MAIN)} visible={visible} render={render}>
         <HiOutlineHome />
       </StyledHome>
       <StyledProfile to="/profile" visible={visible} render={render}>
