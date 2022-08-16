@@ -64,7 +64,7 @@ const StyledSearch = styled(StyledNavItem)`
   `}
 `;
 
-const StyledHome = styled(StyledNavItem)`
+const StyledHome = styled(StyledLink)`
   animation-timing-function: ease-out;
   ${props => props.render && props.visible && css`
     animation-duration: 450ms;

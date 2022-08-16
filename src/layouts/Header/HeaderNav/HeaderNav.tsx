@@ -20,7 +20,7 @@ const HeaderNav = ({ onToggleSearch, visible, render }) => {
       <StyledSearch visible={visible} render={render}>
         <BiSearchAlt2 onClick={onToggleSearch} />
       </StyledSearch>
-      <StyledHome onClick={() => setMode(SERV_MODE.MAIN)} visible={visible} render={render}>
+      <StyledHome to='/' onClick={() => setMode(SERV_MODE.MAIN)} visible={visible} render={render}>
         <HiOutlineHome />
       </StyledHome>
       <StyledProfile to="/profile" visible={visible} render={render}>
