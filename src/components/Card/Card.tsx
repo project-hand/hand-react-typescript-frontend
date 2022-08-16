@@ -1,14 +1,15 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const Card = ({ children, handleMode }) => {
+const Card = ({ children, to }) => {
   return (
-    <StyledCardContainer onClick={handleMode}>
+    <StyledCardContainer to={to} >
       {children}
     </StyledCardContainer>
   );
 };
 
-const StyledCardContainer = styled.div`
+const StyledCardContainer = styled(NavLink)`
   width: 275px;
   height: 350px;
   background-color: #eee;

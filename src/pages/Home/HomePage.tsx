@@ -3,86 +3,35 @@ import CardCalendar from "@/components/Card/CardCalendar/CardCalendar";
 import CardCustom from "@/components/Card/CardCustom/CardCustom";
 import CardMemo from "@/components/Card/CardMemo/CardMemo";
 import CardTodoList from "@/components/Card/CardTodoList/CardTodoList";
-import Sidebar from "@/layouts/Sidebar/Sidebar";
-import { modeState, SERV_MODE } from "@/store/mode";
 import { userState } from "@/store/user";
-import { useToggleSidebar } from "@/utils/hooks/toggleSidebar";
-import { useState } from "react";
-import { DndProvider, useDrag, useDrop } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
-
-const mock = {
-  usingItem: [
-    {
-      index: 1,
-      name: 'calendar',
-    },
-    {
-      index: 2,
-      name: 'memo'
-    },
-    {
-      index: 3,
-      name: 'todo'
-    }
-  ],
-  sidebarItem: [
-    {
-      index: 1,
-      name: 'test'
-    },
-    {
-      index: 2,
-      name: 'test2'
-    },
-    {
-      index: 3,
-      name: 'weather'
-    }
-  ]
-};
 
 
 const HomePage = () => {
   const user = useRecoilValue(userState);
-  const { toggleSidebar, stateSidebar, xPosition } = useToggleSidebar();
-  const [mode, setMode] = useRecoilState(modeState);
+
+  console.log(user);
 
 
   return (
     <StyledHome>
-      {mode === SERV_MODE.MAIN
-        ?
+      <StyledHome>
         <StyledModeSelectContainer>
-          <Card handleMode={() => setMode(SERV_MODE.CAL)}>
+          <Card to="/calendar" >
             <CardCalendar />
           </Card>
-          <Card handleMode={() => setMode(SERV_MODE.MEMO)}>
+          <Card to="/memo">
             <CardMemo />
           </Card>
-          <Card handleMode={() => setMode(SERV_MODE.TODO)}>
+          <Card to="/todo">
             <CardTodoList />
           </Card>
-          <Card handleMode={() => setMode(SERV_MODE.CUSTOM)}>
+          <Card to="/custom">
             <CardCustom />
           </Card>
         </StyledModeSelectContainer>
-        :
-        <DndProvider backend={HTML5Backend}>
-          <StyledItemContainer>
-            {mock.usingItem.map(({ name }) => {
-              return <StyledUsingItem>{name}</StyledUsingItem>;
-            })}
-          </StyledItemContainer>
-          <Sidebar handleSidbar={toggleSidebar} state={stateSidebar} xPosition={xPosition} >
-            {mock.sidebarItem.map(({ name }) => {
-              return <StyledSidebarItem>{name}</StyledSidebarItem>;
-            })}
-          </Sidebar>
-        </DndProvider>
-      }
+      </StyledHome>
     </StyledHome>
   );
 };
@@ -101,35 +50,6 @@ const StyledModeSelectContainer = styled.div`
   width:100%;
   justify-content: space-around;
   align-items: center;
-`;
-
-const StyledItemContainer = styled.div`
-  
-  
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(auto-fill, 1fr);
-  gap: 0.5em 1em;
-`;
-
-const StyledUsingItem = styled.div.attrs({
-  draggable: 'true'
-})`
-  width: 250px;
-  height: 250px;
-  background-color: #eee;
-  border-radius: 15px;
-  resize: both;
-  overflow: auto;
-`;
-
-const StyledSidebarItem = styled.div.attrs({
-  draggable: 'true'
-})`
-  width: 70px;
-  height: 70px;
-  background-color: white;
-  border-radius: 15px;
 `;
 
 export default HomePage;
