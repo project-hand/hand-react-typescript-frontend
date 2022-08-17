@@ -9,20 +9,20 @@ const UserProfile = () => {
   const user = useRecoilValue(userState);
   console.log(user);
   return (
-    <StyledUserProfileContainer>
-      <div>
-        {user?.name}
-      </div>
-      <div>
-        user avatar
-      </div>
-      <div>
-        {user?.email}
-      </div>
-      <div>
-        <WeekCalendar schedule={user?.schedule} />
-      </div>
-    </StyledUserProfileContainer>
+    <>
+      <StyledUserProfileContainer>
+        <div>
+          {user?.name}
+        </div>
+        <div>
+          user avatar
+        </div>
+        <div>
+          {user?.email}
+        </div>
+      </StyledUserProfileContainer>
+      <WeekCalendar schedule={user?.schedule} />
+    </>
   );
 };
 

@@ -25,6 +25,4 @@ const StyledWeekCalendarContainer = styled.div`
   border-radius: 20px;
 `;
 
-
-
 export default WeekCalendar;
