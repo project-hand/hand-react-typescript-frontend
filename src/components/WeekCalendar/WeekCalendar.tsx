@@ -20,8 +20,6 @@ const StyledWeekCalendarContainer = styled.div`
   background-color: white;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  height: 150px;
   border-radius: 20px;
 `;
 

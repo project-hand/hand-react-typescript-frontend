@@ -6,6 +6,8 @@ const Day = ({ day, schedules }: DayProps) => {
     <StyledDayContainer>
       <StyledDaytitle>{day}</StyledDaytitle>
       {schedules.map(schedule => {
+        console.log(schedules);
+
         return <StyledDaySchedule label={schedule.label} time={parseInt(schedule.end) - parseInt(schedule.start)}>{schedule.place}</StyledDaySchedule>;
       })}
     </StyledDayContainer>

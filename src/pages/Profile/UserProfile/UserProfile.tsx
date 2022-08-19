@@ -1,9 +1,9 @@
 
+import Avatar from "@/components/Avatar/Avatar";
 import WeekCalendar from "@/components/WeekCalendar/WeekCalendar";
 import { userState } from "@/store";
 import { useRecoilValue } from "recoil";
 import styled from "styled-components";
-
 
 const UserProfile = () => {
   const user = useRecoilValue(userState);
@@ -11,11 +11,9 @@ const UserProfile = () => {
   return (
     <>
       <StyledUserProfileContainer>
+        <Avatar image={user?.profileImage} />
         <div>
           {user?.name}
-        </div>
-        <div>
-          user avatar
         </div>
         <div>
           {user?.email}
@@ -27,9 +25,6 @@ const UserProfile = () => {
 };
 
 const StyledUserProfileContainer = styled.div`
-  width: 500px;
-  height: 500px;
-  background-color: #eee;
   display: flex;
   flex-direction: column;
   align-items: center;
