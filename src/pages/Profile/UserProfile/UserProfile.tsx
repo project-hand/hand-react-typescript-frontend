@@ -11,7 +11,7 @@ const UserProfile = () => {
   return (
     <>
       <StyledUserProfileContainer>
-        <Avatar image={user?.profileImage} />
+        <Avatar image={user?.profileImage} size={'xlg'} kind={'circle'} />
         <div>
           {user?.name}
         </div>
