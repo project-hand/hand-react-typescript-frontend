@@ -1,11 +1,18 @@
+export interface ScheduleProps {
+  day: string,
+  place: string,
+  start: string,
+  end: string,
+  label: string,
+}
+
 export interface UserStateProps {
   _id: string;
   email: string;
   name: string;
   authority: string;
-  description?: string;
   profileImage?: string[];
-  contactNumber?: string;
+  schedule?: ScheduleProps[],
   refreshToken: string;
   createdAt: string;
   updatedAt: string;
