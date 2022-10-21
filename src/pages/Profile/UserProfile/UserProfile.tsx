@@ -9,28 +9,45 @@ const UserProfile = () => {
   const user = useRecoilValue(userState);
   console.log(user);
   return (
-    <>
-      <StyledUserProfileContainer>
-        <Avatar image={user?.profileImage} size={'xlg'} kind={'circle'} />
-        <div>
-          {user?.name}
-        </div>
-        <div>
-          {user?.email}
-        </div>
-      </StyledUserProfileContainer>
+    <StyledUserProfileContainer>
+      <StyledProfile>
+        <Avatar image={user?.profileImage} size={'md'} kind={'circle'} />
+        <StyledUserInfo>
+          <div>
+            {user?.name}
+          </div>
+          <div>
+            {user?.email}
+          </div>
+        </StyledUserInfo>
+      </StyledProfile>
       <WeekCalendar schedule={user?.schedule} />
-    </>
+    </StyledUserProfileContainer>
   );
 };
 
 const StyledUserProfileContainer = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+`;
+
+const StyledProfile = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+`;
+
+const StyledUserInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 500;
 `;
 
 export default UserProfile;
